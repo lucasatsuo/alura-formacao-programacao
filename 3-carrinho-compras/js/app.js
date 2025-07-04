@@ -26,10 +26,8 @@ function adicionar(){
     });
     
     // Exibir no carrinho
+    limpaCarrinho();
     let carrinho = document.getElementById("lista-produtos");
-    
-    // <span class="texto-azul">1x</span> Celular <span class="texto-azul">R$1400</span>
-    carrinho.innerHTML = "";
     listaCarrinho.forEach(element => {
         carrinho.innerHTML += montaHtmlLista(element[0] ,element[1] ,element[2]);
     });
@@ -38,12 +36,14 @@ function adicionar(){
     document.getElementById("valor-total").textContent = `R$${totalCompras}`;
 }
 
+function limpaCarrinho(){
+    let carrinho = document.getElementById("lista-produtos");
+    carrinho.innerHTML = "";
+}
 
 function limpar(){
     listaCarrinho = [];
-    let carrinho = document.getElementById("lista-produtos");
-    conteudoCarrinho = carrinho.querySelector(".carrinho__produtos__produto");
-    conteudoCarrinho.innerHTML = "";
+    limpaCarrinho();
     document.getElementById("valor-total").textContent = `R$0`;
-
+    document.getElementById("quantidade").value = "";
 }
