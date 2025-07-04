@@ -27,12 +27,11 @@ function adicionar(){
     
     // Exibir no carrinho
     let carrinho = document.getElementById("lista-produtos");
-    conteudoCarrinho = carrinho.querySelector(".carrinho__produtos__produto");
     
     // <span class="texto-azul">1x</span> Celular <span class="texto-azul">R$1400</span>
-    conteudoCarrinho.innerHTML = "";
+    carrinho.innerHTML = "";
     listaCarrinho.forEach(element => {
-        conteudoCarrinho.innerHTML += montaHtmlLista(element[0] ,element[1] ,element[2]);
+        carrinho.innerHTML += montaHtmlLista(element[0] ,element[1] ,element[2]);
     });
 
     // Atualiza total

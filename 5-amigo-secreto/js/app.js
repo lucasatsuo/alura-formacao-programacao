@@ -79,7 +79,7 @@ function sortear() {
     sorteados = [].concat(incluidos); // sorteados = incluidos;
 
     for(let i=sorteados.length-1; i>0; i--){
-        novoSorteado = Math.floor(Math.random() * i);
+        novoSorteado = Math.floor(Math.random() * i); 
         aux = String(sorteados[i]);
         sorteados[i] = sorteados[novoSorteado];
         sorteados[novoSorteado] = aux;
